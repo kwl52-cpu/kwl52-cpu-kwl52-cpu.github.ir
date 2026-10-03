@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kristine Lee | SCM & BAIT Portfolio - Rutgers Business School</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        scarlet: {
+                            50: '#fef2f2',
+                            100: '#ffe1e1',
+                            600: '#dc2626',
+                            700: '#cc0033', // Official Rutgers Scarlet
+                            800: '#990022',
+                            900: '#660011',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #1e293b;
+        }
+        .card-3d-wrap {
+            perspective: 1000px;
+        }
+        .card-3d-inner {
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform-style: preserve-3d;
+        }
+        .card-3d-inner.flipped {
+            transform: rotateY(180deg);
+        }
+        .card-front, .card-back {
+            backface-visibility: hidden;
+        }
+        .card-back {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body class="bg-white text-slate-800 antialiased font-sans selection:bg-scarlet-700 selection:text-white">
+
+    <nav class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-scarlet-700 text-white flex items-center justify-center font-heading font-bold text-xl shadow-md group-hover:bg-scarlet-800 transition">
+                        KL
+                    </div>
+                    <div>
+                        <span class="font-heading font-bold text-lg text-slate-900 block leading-none">Kristine Lee</span>
+                        <span class="text-xs text-scarlet-700 font-semibold tracking-wider uppercase">Rutgers RBS '28</span>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                    <a href="#about" class="text-slate-600 hover:text-scarlet-700 transition">About</a>
+                    <a href="#statement" class="text-slate-600 hover:text-scarlet-700 transition">Statement</a>
+                    <a href="#skills" class="text-slate-600 hover:text-scarlet-700 transition">Skills</a>
+                    <a href="#projects" class="text-slate-600 hover:text-scarlet-700 transition">Projects</a>
+                    <a href="#contact" class="text-slate-600 hover:text-scarlet-700 transition">Contact</a>
+                    
+                    <button onclick="openCardModal()" class="bg-slate-900 hover:bg-scarlet-700 text-white px-4 py-2 rounded-lg font-medium transition duration-200 shadow-sm flex items-center gap-2">
+                        <i class="fa-solid fa-address-card"></i> Digital Card
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="py-16 md:py-24 bg-gradient-to-b from-slate-50 via-white to-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Content Column -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-scarlet-50 border border-scarlet-100 text-scarlet-700 font-semibold text-xs uppercase tracking-wider">
+                        <span class="w-2 h-2 rounded-full bg-scarlet-700 animate-pulse"></span>
+                        Rutgers Business School • Class of 2028
+                    </div>
+                    
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 tracking-tight">
+                        Optimizing <span class="text-scarlet-700">Supply Chains</span> Through Data Analytics.
+                    </h1>
+                    
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Double majoring in <strong class="text-slate-800">Supply Chain Management</strong> and <strong class="text-slate-800">Business Analytics & Information Technology (BAIT)</strong>. Dedicated to transforming complex operations into streamlined, data-backed strategic decisions.
+                    </p>
+
+                    <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="mailto:kristine.lee@rutgers.edu" class="bg-scarlet-700 hover:bg-scarlet-800 text-white font-medium px-6 py-3 rounded-xl shadow-lg shadow-scarlet-700/20 transition flex items-center gap-2">
+                            <i class="fa-solid fa-envelope"></i> Email Kristine
+                        </a>
+                        <a href="https://www.linkedin.com/in/kristine-lee808/" target="_blank" class="bg-white border border-slate-300 hover:border-slate-400 text-slate-700 font-medium px-6 py-3 rounded-xl shadow-sm transition flex items-center gap-2 hover:bg-slate-50">
+                            <i class="fa-brands fa-linkedin text-blue-600"></i> LinkedIn Profile
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side: Headshot Display -->
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative group max-w-sm w-full">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-scarlet-700 to-slate-900 rounded-3xl blur opacity-25 group-hover:opacity-40 transition duration-300"></div>
+                        
+                        <div class="relative bg-white p-4 rounded-3xl border border-slate-200 shadow-xl text-center">
+                            <div class="relative w-full aspect-square rounded-2xl bg-slate-100 overflow-hidden border border-slate-200 shadow-inner">
+                                <img 
+                                    src="Untitleddesign.jpg" 
+                                    alt="Kristine Lee - Rutgers RBS" 
+                                    class="w-full h-full object-cover rounded-2xl" 
+                                    onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('hero-img-fallback').classList.remove('hidden');"
+                                />
+                                
+                                <!-- Fallback if image file is not found -->
+                                <div id="hero-img-fallback" class="hidden w-full h-full flex flex-col items-center justify-center p-6 text-slate-500 bg-slate-100">
+                                    <div class="w-16 h-16 rounded-full bg-scarlet-50 text-scarlet-700 flex items-center justify-center text-2xl mb-2">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <p class="text-xs font-bold text-slate-700">Kristine Lee</p>
+                                    <p class="text-[10px] text-slate-400 font-mono mt-1">Image: Untitleddesign.jpg</p>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                                <span class="font-medium text-slate-700"><i class="fa-solid fa-graduation-cap text-scarlet-700"></i> Rutgers University</span>
+                                <span class="bg-scarlet-50 text-scarlet-700 border border-scarlet-100 px-2.5 py-1 rounded-full font-semibold">SCM & BAIT</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="statement" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden border border-slate-800">
+                <div class="absolute -right-12 -top-12 w-64 h-64 bg-scarlet-700/20 rounded-full blur-3xl"></div>
+                <div class="absolute -left-12 -bottom-12 w-64 h-64 bg-scarlet-700/10 rounded-full blur-3xl"></div>
+                
+                <div class="relative z-10 text-center space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-scarlet-700/20 border border-scarlet-700/40 text-scarlet-400 font-bold text-xs uppercase tracking-widest">
+                        <i class="fa-solid fa-quote-left"></i> Personal Statement
+                    </div>
+                    
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-heading font-extrabold text-white leading-tight max-w-3xl mx-auto">
+                        "As a double major in Supply Chain Management and BAIT at Rutgers Business School, I bridge the gap between operational logistics and business analytics to build resilient, efficient, and data-driven supply chain solutions."
+                    </h2>
+
+                    <div class="pt-4 flex items-center justify-center gap-3 text-slate-400 text-sm">
+                        <span class="font-bold text-white">Kristine Lee</span>
+                        <span>•</span>
+                        <span>RBS Class of 2028</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-16 bg-slate-50 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-scarlet-700 uppercase tracking-widest mb-2">Core Competencies</h2>
+                <h3 class="text-3xl font-heading font-bold text-slate-900">Technical & Professional Skills</h3>
+                <p class="text-slate-600 text-sm mt-2">Equipped with analytical software expertise and foundational supply chain methodologies.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Analytics & IT -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-scarlet-700 text-white rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Analytics & Programming</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Python Data Analysis (Pandas, NumPy)</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>SQL Database Querying</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Tableau & Power BI Dashboards</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>R & Predictive Modeling</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Advanced Excel (VLOOKUP, Pivot Tables)</span></li>
+                    </ul>
+                </div>
+
+                <!-- Supply Chain Operations -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-slate-900 text-white rounded-xl flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-boxes-packing"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Supply Chain & Operations</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Inventory Planning & Control</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Logistics & Freight Optimization</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Procurement & Strategic Sourcing</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Demand Forecasting</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Process Mapping & Lean Principles</span></li>
+                    </ul>
+                </div>
+
+                <!-- Business Strategy -->
+                <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition">
+                    <div class="w-12 h-12 bg-scarlet-50 text-scarlet-700 rounded-xl flex items-center justify-center text-xl mb-4 border border-scarlet-200">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-slate-900 mb-3">Business Management</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-600">
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>ERP & SAP System Concepts</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Cross-Functional Leadership</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Risk Mitigation Modeling</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Project Management & Agility</span></li>
+                        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-scarlet-700 text-xs"></i> <span>Business Data Presentation</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <h2 class="text-xs font-bold text-scarlet-700 uppercase tracking-widest mb-2">Applied Knowledge</h2>
+                <h3 class="text-3xl font-heading font-bold text-slate-900">Featured Projects & Case Studies</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-scarlet-700/40 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-scarlet-700 bg-scarlet-50 border border-scarlet-200 px-2.5 py-0.5 rounded-full">Supply Chain</span>
+                            <span class="text-xs text-slate-400">RBS Case Study</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Distribution Network Optimization</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Modeled fulfillment routes across regional distribution hubs to minimize fuel consumption and shorten order fulfillment lead times.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">Python</span>
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">Logistics</span>
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">Linear Programming</span>
+                        </div>
+                        <a href="https://www.linkedin.com/in/kristine-lee808/" target="_blank" class="text-xs font-bold text-scarlet-700 hover:text-scarlet-800 flex items-center gap-1">
+                            Learn More on LinkedIn <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-scarlet-700/40 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-800 bg-slate-200 px-2.5 py-0.5 rounded-full">BAIT Analytics</span>
+                            <span class="text-xs text-slate-400">Demand Modeling</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Predictive Inventory Analytics</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Built a Tableau dashboard leveraging historical sales data and seasonal trend analysis to reduce safety stock carrying costs.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">Tableau</span>
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">SQL</span>
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">Forecasting</span>
+                        </div>
+                        <a href="https://www.linkedin.com/in/kristine-lee808/" target="_blank" class="text-xs font-bold text-scarlet-700 hover:text-scarlet-800 flex items-center gap-1">
+                            Learn More on LinkedIn <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-slate-50 rounded-2xl p-6 border border-slate-200 flex flex-col justify-between hover:border-scarlet-700/40 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-scarlet-700 bg-scarlet-50 border border-scarlet-200 px-2.5 py-0.5 rounded-full">Global Sourcing</span>
+                            <span class="text-xs text-slate-400">Risk Assessment</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Global Supply Chain Risk Matrix</h4>
+                        <p class="text-slate-600 text-sm leading-relaxed mb-4">
+                            Evaluated geopolitical, tariffs, and supplier reliability risks across overseas supplier networks to formulate strategic dual-sourcing recommendations.
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">Procurement</span>
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">Risk Analysis</span>
+                            <span class="text-[10px] font-mono bg-white text-slate-700 border border-slate-200 px-2 py-0.5 rounded">Excel</span>
+                        </div>
+                        <a href="https://www.linkedin.com/in/kristine-lee808/" target="_blank" class="text-xs font-bold text-scarlet-700 hover:text-scarlet-800 flex items-center gap-1">
+                            Learn More on LinkedIn <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-16 bg-slate-50 border-t border-slate-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-xs font-bold text-scarlet-700 uppercase tracking-widest mb-2">Connect</h2>
+            <h3 class="text-3xl font-heading font-bold text-slate-900 mb-6">Let's Get in Touch</h3>
+            <p class="text-slate-600 max-w-xl mx-auto text-sm mb-8">
+                I am actively seeking internship and professional networking opportunities in Supply Chain Management and Business Analytics.
+            </p>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <a href="mailto:kristine.lee@rutgers.edu" class="bg-scarlet-700 hover:bg-scarlet-800 text-white font-medium px-6 py-3 rounded-xl shadow-md transition flex items-center gap-2">
+                    <i class="fa-solid fa-envelope"></i> kristine.lee@rutgers.edu
+                </a>
+                <a href="https://www.linkedin.com/in/kristine-lee808/" target="_blank" class="bg-white border border-slate-300 hover:border-slate-400 text-slate-700 font-medium px-6 py-3 rounded-xl shadow-sm transition flex items-center gap-2">
+                    <i class="fa-brands fa-linkedin text-blue-600"></i> LinkedIn Profile
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left">
+            <div>
+                <h4 class="text-white font-bold text-lg font-heading">Kristine Lee</h4>
+                <p class="text-xs text-slate-400 mt-1">Rutgers Business School • SCM & BAIT '28</p>
+            </div>
+            
+            <div class="flex items-center gap-6 text-xl">
+                <a href="https://www.linkedin.com/in/kristine-lee808/" target="_blank" class="hover:text-scarlet-500 transition" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="mailto:kristine.lee@rutgers.edu" class="hover:text-scarlet-500 transition" title="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+
+            <p class="text-xs text-slate-500">
+                &copy; 2026 Kristine Lee. Rutgers Business School.
+            </p>
+        </div>
+    </footer>
+
+    <div id="card-modal" class="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="relative w-full max-w-md">
+            
+            <!-- Close Button -->
+            <button onclick="closeCardModal()" class="absolute -top-12 right-0 text-white hover:text-scarlet-500 text-2xl font-bold">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Card Wrap -->
+            <div class="card-3d-wrap w-full">
+                <div id="interactive-card" class="card-3d-inner relative w-full h-[480px] rounded-3xl shadow-2xl">
+                    
+                    <!-- FRONT OF CARD -->
+                    <div class="card-front absolute inset-0 w-full h-full bg-white rounded-3xl border-2 border-slate-200 p-6 flex flex-col justify-between overflow-hidden shadow-xl">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <span class="bg-scarlet-700 text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md">Rutgers Business School</span>
+                                <h3 class="text-2xl font-bold text-slate-900 font-heading mt-2">Kristine Lee</h3>
+                                <p class="text-xs font-semibold text-scarlet-700">SCM & BAIT '28</p>
+                            </div>
+                            
+                            <!-- MODAL HEADSHOT -->
+                            <div class="w-16 h-16 rounded-xl bg-slate-100 border border-slate-300 overflow-hidden relative shrink-0">
+                                <img 
+                                    src="Untitleddesign.jpg" 
+                                    alt="Kristine Lee" 
+                                    class="w-full h-full object-cover" 
+                                    onerror="this.onerror=null; this.classList.add('hidden'); document.getElementById('modal-img-fallback').classList.remove('hidden');" 
+                                />
+                                <div id="modal-img-fallback" class="hidden w-full h-full flex items-center justify-center text-scarlet-700 bg-scarlet-50">
+                                    <i class="fa-solid fa-user text-xl"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="my-auto space-y-2 text-xs text-slate-600 bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                            <p class="flex items-center gap-2"><i class="fa-solid fa-envelope text-scarlet-700 w-4"></i> kristine.lee@rutgers.edu</p>
+                            <p class="flex items-center gap-2"><i class="fa-solid fa-location-dot text-scarlet-700 w-4"></i> New Brunswick, NJ</p>
+                            <p class="flex items-center gap-2 truncate"><i class="fa-brands fa-linkedin text-scarlet-700 w-4"></i> linkedin.com/in/kristine-lee808</p>
+                        </div>
+
+                        <div class="pt-4 border-t border-slate-100 flex justify-between items-center">
+                            <button onclick="flipCard()" class="text-xs bg-slate-900 text-white px-3.5 py-2 rounded-lg font-medium hover:bg-scarlet-700 transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-rotate"></i> Flip to QR Code
+                            </button>
+                            <button onclick="downloadVCard()" class="text-xs bg-scarlet-50 text-scarlet-700 border border-scarlet-200 px-3.5 py-2 rounded-lg font-medium hover:bg-scarlet-100 transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-download"></i> Save Contact
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- BACK OF CARD -->
+                    <div class="card-back absolute inset-0 w-full h-full bg-slate-900 text-white rounded-3xl p-6 flex flex-col justify-between overflow-hidden shadow-xl">
+                        <div class="text-center">
+                            <h4 class="font-bold text-lg font-heading">Digital Contact QR</h4>
+                            <p class="text-xs text-slate-400">Scan to connect with Kristine</p>
+                        </div>
+
+                        <!-- QR Code -->
+                        <div class="mx-auto bg-white p-4 rounded-2xl shadow-inner">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BEGIN:VCARD%0AVERSION:3.0%0AN:Lee;Kristine;;;%0AFN:Kristine%20Lee%0AORG:Rutgers%20Business%20School%0ATITLE:SCM%20%26%20BAIT%20Student%0AEMAIL:kristine.lee@rutgers.edu%0AURL:https://www.linkedin.com/in/kristine-lee808/%0AEND:VCARD" alt="vCard QR Code" class="w-32 h-32" />
+                        </div>
+
+                        <div class="text-center">
+                            <button onclick="flipCard()" class="text-xs bg-white text-slate-900 px-4 py-2 rounded-lg font-bold hover:bg-scarlet-500 hover:text-white transition">
+                                <i class="fa-solid fa-rotate mr-1"></i> Flip Back
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openCardModal() {
+            document.getElementById('card-modal').classList.remove('hidden');
+        }
+
+        function closeCardModal() {
+            document.getElementById('card-modal').classList.add('hidden');
+        }
+
+        function flipCard() {
+            const card = document.getElementById('interactive-card');
+            card.classList.toggle('flipped');
+        }
+
+        function downloadVCard() {
+            const vcardData = `BEGIN:VCARD
+VERSION:3.0
+FN:Kristine Lee
+TITLE:SCM & BAIT Double Major '28
+ORG:Rutgers Business School
+EMAIL:kristine.lee@rutgers.edu
+URL:https://www.linkedin.com/in/kristine-lee808/
+NOTE:Supply Chain Management and Business Analytics Student
+END:VCARD`;
+
+            const blob = new Blob([vcardData], { type: 'text/vcard' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.setAttribute('href', url);
+            a.setAttribute('download', 'Kristine_Lee_Rutgers.vcf');
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        }
+    </script>
+</body>
+</html>
